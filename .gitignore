@@ -23,3 +23,6 @@ experiment/output/
 !experiment/output/.keep
 !data/tmp/.keep
 
+# System files           #
+##########################
+*.pyc 
