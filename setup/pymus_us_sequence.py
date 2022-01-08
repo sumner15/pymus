@@ -60,8 +60,8 @@ class UsPWSequence(object):
 		else:
 			self.sampling_freq = data_from_file[key_prf][0]
 
-def ImportFromCreatis(nbPW=3):
-	f_name = "dataset_rf_in_vitro_type1_transmission_1_nbPW_%s.hdf5" % nbPW
+def ImportFromCreatis(nbPW=3,prefix="in_vitro_type1"):
+	f_name = f"dataset_rf_{prefix}_transmission_1_nbPW_{nbPW}.hdf5" 
 	pymusutil.download_dataset(f_name,pymusutil.TO_DATA_TMP)
 	sequence = UsPWSequence()
 	sequence.read_file(pymusutil.TO_DATA_TMP + f_name,"US/US_DATASET0000/",caps_prf=True)
