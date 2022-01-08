@@ -17,7 +17,7 @@ You will need a distribution of Python (v 3.5+) and several classic python packa
 
 You'll usually want to set up a conda environment, e.g. 
 ```
-conda create --n [env_name]
+conda create --name [env_name] python==3.7
 conca activate [env_name]
 ```
 
