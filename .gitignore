@@ -1,3 +1,11 @@
+# pipenv creations       #
+##########################
+Pipfile
+Pipfile.lock
+bin/
+lib64
+pyvenv.cfg
+
 # DATA files             # 
 ##########################
 data/echo/
