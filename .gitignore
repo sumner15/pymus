@@ -1,3 +1,11 @@
+# pipenv creations       #
+##########################
+Pipfile
+Pipfile.lock
+bin/
+lib64
+pyvenv.cfg
+
 # DATA files             # 
 ##########################
 data/echo/
@@ -23,3 +31,6 @@ experiment/output/
 !experiment/output/.keep
 !data/tmp/.keep
 
+# System files           #
+##########################
+*.pyc 

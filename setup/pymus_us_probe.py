@@ -82,8 +82,8 @@ class UsProbe(object):
 			self.sampling_freq = data_from_file['sampling_frequency'][0]
 
 
-def ImportFromCreatis():
-	dummy_name = "dataset_rf_in_vitro_type1_transmission_1_nbPW_3.hdf5"
+def ImportFromCreatis(nbPW=3,prefix="in_vitro_type1"):
+	dummy_name = f"dataset_rf_{prefix}_transmission_1_nbPW_{nbPW}.hdf5"
 	pymusutil.download_dataset(dummy_name,pymusutil.TO_DATA_TMP)
 	probe = UsProbe()
 	probe.read_file(pymusutil.TO_DATA_TMP + dummy_name,"US/US_DATASET0000/","probe_")
