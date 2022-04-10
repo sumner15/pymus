@@ -65,9 +65,10 @@ class BeamFormer(object):
 				receive_distance = np.sqrt( sqr_x_dist + sqr_z_dist );
 				''' total delay on the pixel array '''
 				delay = ( transmit_distance + receive_distance )/dataset.sound_speed;
-				if delay.max() > time_vector.max():
-					logging.error(" Inconsistent data - code too short to probe farthest elements ")
-					continue
+				if delay.max() > time_vector.max():					
+					logging.info(f"delay.max: {delay.max()}\ttime_vextor.max: {time_vector.max()}")
+					logging.info(f"{type(delay)} {delay.shape}\t {type(time_vector)} {time_vector.shape}")
+					raise pymus_dataset.IncompatibleDatasetSettings(" Inconsistent data - code too short to probe farthest elements ")					
 				''' beamformed data '''
 				f_interp = interpolate.interp1d(time_vector,data[w_i,n_x,:],kind='slinear',bounds_error=False)
 				delayed_inc = f_interp(delay)
